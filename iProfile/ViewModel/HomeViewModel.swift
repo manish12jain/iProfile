@@ -15,10 +15,7 @@ class HomeViewModel
 
     
     func getEmployeeData(completion: @escaping (Result<Bool, Error>) -> (Void))
-    {
-        let data : String = "8298"
-        print(data.toBase64())
-        
+    {        
         NetworkConnector.sharedInstance.getEmployeeAPIData { (result) in
             DispatchQueue.main.async
             {
