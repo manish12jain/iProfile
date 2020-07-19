@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--First-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="9pv-A4-QxB" customClass="HomeViewController" customModule="iProfile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD9-UM-DGR">
+                                <rect key="frame" x="143" y="318.5" width="89" height="30"/>
+                                <state key="normal" title="Load Profiles"/>
+                                <connections>
+                                    <action selector="loadProfilesTapped:" destination="9pv-A4-QxB" eventType="touchUpInside" id="eLn-0d-clm"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="xD9-UM-DGR" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="P4h-b4-AmW"/>
+                            <constraint firstItem="xD9-UM-DGR" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="qNv-7Y-gXG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="First" image="home" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="btnLoadProfile" destination="xD9-UM-DGR" id="b7E-nk-o0T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="-320.68965517241384"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="Eew-6J-fHa">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="wvC-Nt-SSi" customClass="SearchViewController" customModule="iProfile" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qeT-BT-tzn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Enter employee name..." translatesAutoresizingMaskIntoConstraints="NO" id="7cq-wO-bDq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="LtJ-lP-Sd2"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                                <connections>
+                                    <outlet property="delegate" destination="wvC-Nt-SSi" id="sRS-c8-Z5M"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yf5-ac-Rsn">
+                                <rect key="frame" x="0.0" y="56" width="375" height="562"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EmployeeCell" id="dFf-7Q-TKi" customClass="EmployeeCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dFf-7Q-TKi" id="2ds-9S-4Hl">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wvC-Nt-SSi" id="Dpu-sP-8dL"/>
+                                    <outlet property="delegate" destination="wvC-Nt-SSi" id="Hf7-PQ-d3s"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7cq-wO-bDq" firstAttribute="trailing" secondItem="qqJ-zd-IFm" secondAttribute="trailing" id="5yZ-Li-3xa"/>
+                            <constraint firstItem="yf5-ac-Rsn" firstAttribute="leading" secondItem="qqJ-zd-IFm" secondAttribute="leading" id="PLu-mh-4UP"/>
+                            <constraint firstItem="yf5-ac-Rsn" firstAttribute="top" secondItem="7cq-wO-bDq" secondAttribute="bottom" id="Sx5-jW-GMM"/>
+                            <constraint firstItem="yf5-ac-Rsn" firstAttribute="bottom" secondItem="qqJ-zd-IFm" secondAttribute="bottom" id="nvv-TA-5Pg"/>
+                            <constraint firstItem="7cq-wO-bDq" firstAttribute="top" secondItem="qqJ-zd-IFm" secondAttribute="top" id="qZk-ji-2MY"/>
+                            <constraint firstItem="yf5-ac-Rsn" firstAttribute="trailing" secondItem="qqJ-zd-IFm" secondAttribute="trailing" id="w35-ae-veL"/>
+                            <constraint firstItem="7cq-wO-bDq" firstAttribute="leading" secondItem="qqJ-zd-IFm" secondAttribute="leading" id="zcP-Qo-mgA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qqJ-zd-IFm"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="search" id="HM2-hF-LMS"/>
+                    <connections>
+                        <outlet property="mTableView" destination="yf5-ac-Rsn" id="JB3-sh-19l"/>
+                        <outlet property="searchBar" destination="7cq-wO-bDq" id="M5k-Fy-JQA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hXa-nc-M08" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="341"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="wvC-Nt-SSi" kind="relationship" relationship="viewControllers" id="CHk-e2-GBD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="32" height="32"/>
+        <image name="search" width="32" height="32"/>
+    </resources>
+</document>
